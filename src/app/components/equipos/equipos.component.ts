@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquiposService, Equipos } from '../../service/equipos.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-equipos',
@@ -8,13 +9,23 @@ import { EquiposService, Equipos } from '../../service/equipos.service';
 })
 export class EquiposComponent implements OnInit {
 
-  tierraArr: Equipos[] = [];
+  tierraTeam: Equipos[] = [];
 
-  constructor( private equiposService: EquiposService) { }
+  constructor(  private equiposService: EquiposService,
+                private router: Router,
+                private activatedrouter: ActivatedRoute,
+    ) {
+
+      this.activatedrouter.params.subscribe( params => {
+
+        this.tierraTeam = this.equiposService.getEquipos( params ['id']);
+        console.log ('A ver el ID ' + this.tierraTeam);
+      });
+    }
 
   ngOnInit() {
-  this.tierraArr = this.equiposService.getEquipos();
-  console.log ('Este de equipos.comp.ts?' + this.tierraArr);
+  // this.tierraTeam = this.equiposService.getEquipos();
+
   }
 
 }

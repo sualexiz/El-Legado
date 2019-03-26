@@ -7,30 +7,38 @@ export class EquiposService {
 
     private equipos: Equipos[] = [
         {
+        id: '1',
         equipo: 'TIERRA',
         nombre: 'Wilmer Fernando Domicó',
         edad: '21',
+        img: 'assets/img/tierra/wilmer.png',
         video: 'https://www.youtube.com/embed/7P9S-lTbgP4',
         lugar: 'Frontino/ Llano Rio Verde',
         },
         {
+        id: '2',
         equipo: 'TIERRA',
         nombre: 'Merly Domicó',
         edad: '21',
+        img: 'assets/img/tierra/merly.png',
         video: 'https://www.youtube.com/embed/7P9S-lTbgP4',
         lugar: 'Dabeiba/Antadó',
         },
         {
+        id: '3',
         equipo: 'TIERRA',
         nombre: 'Yeidis Alianis Martínez',
         edad: '20',
+        img: 'assets/img/tierra/yeydis.png',
         video: 'https://www.youtube.com/embed/7P9S-lTbgP4',
         lugar: 'Apartadó/ Las Palmas',
         },
         {
+        id: '4',
         equipo: 'TIERRA',
         nombre: 'Andrés Elias Domicó',
         edad: '23',
+        img: 'assets/img/tierra/andres.png',
         video: 'https://www.youtube.com/embed/7P9S-lTbgP4',
         lugar: 'Dabeiba/ Choromandó',
         },
@@ -58,15 +66,16 @@ export class EquiposService {
 ];
 
 constructor() {
-    console.log('servicio listo !!' + this.equipos[0]);
+    console.log('servicio listo en vista equipos !!' + this.equipos[0]);
 }
 
 // Submetodo Publico, por buenas practicas
-getEquipos() {
-    let tierra = equipos.find(item => item.equipo === 'TIERRA');
-    // return this.equipos;
 
-    return tierraArr;
+getEquipos( ) {
+    return this.equipos;
+}
+getEquipos2( idx: string) {
+return this.equipos[idx];
 
 }
 
@@ -75,10 +84,12 @@ getEquipos() {
 
 // Interface
 export interface Equipos {
+    id: any;
     equipo: string;
     nombre: string;
     edad: string;
     video: string;
+    img: string;
     lugar: string;
 
 }

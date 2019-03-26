@@ -3,12 +3,12 @@
         <div class="col-md-12">
             <h1>participante: </h1>
             <h1>VIDEO</h1>
-            <h1>EQUIPO TIERRA</h1>
+            <!-- <h1>EQUIPO {{equipo.id}}</h1> -->
         </div>
     </div>
     <div class="row text-center mt-5">
-        <div class="col-4" *ngFor="let equipo of tierraArr">
-            <p>{{equipo.nombre}}</p>
+        <div class="col-4" *ngFor="let equipo of tierraTeam; let i=index">
+            <img [routerLink]="['/equipos',i]" style="max-width: 50%;" [src]="equipo.img" [alt]="equipo.nombre">
         </div>
 
     </div>

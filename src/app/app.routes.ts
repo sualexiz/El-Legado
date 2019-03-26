@@ -4,7 +4,7 @@ import { EquiposComponent } from './components/equipos/equipos.component';
 
 const APP_ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'equipos', component: EquiposComponent },
+    { path: 'equipos/:id', component: EquiposComponent },
     { path: 'tierra', component: EquiposComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
